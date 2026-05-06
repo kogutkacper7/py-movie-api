@@ -3,6 +3,7 @@ from cinema.models import Movie
 from cinema.serializer import MovieSerializer
 from rest_framework.test import APIClient
 
+
 class MovieModelTest(TestCase):
 
     def test_str(self):
@@ -13,6 +14,7 @@ class MovieModelTest(TestCase):
         )
         self.assertEqual(str(movie), "Test_Film")
 
+
 class MovieSerializerTest(TestCase):
 
     def setUp(self):
@@ -22,10 +24,11 @@ class MovieSerializerTest(TestCase):
             duration=100
         )
 
-        self.data = {"title": "Test_Film",
-                "description": "Test_Description",
-                "duration": 130
-                }
+        self.data = {
+            "title": "Test_Film",
+            "description": "Test_Description",
+            "duration": 130
+            }
 
     def test_valid_data(self):
         serializer = MovieSerializer(data=self.data)
